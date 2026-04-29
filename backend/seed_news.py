@@ -31,6 +31,22 @@ mock_news = [
         "category": "event",
         "is_featured": False,
     },
+    {
+        "title": "Double Gold Weekend",
+        "slug": "double-gold-weekend",
+        "summary": "Earn double gold from all sources this weekend!",
+        "content": "Get ready for massive gold gains! All gold drops, quest rewards, and merchant profits will be doubled from Friday to Sunday. Make sure to complete your daily quests and farm your favorite dungeons!",
+        "category": "event",
+        "is_featured": False,
+    },
+    {
+        "title": "New Pet System Coming Soon",
+        "slug": "new-pet-system",
+        "summary": "Train and evolve your own companion pets with unique abilities.",
+        "content": "We're excited to announce the upcoming Pet System! Capture wild creatures, raise them from babies to adults, and unlock special evolutions. Each pet will provide unique buffs and companion abilities in combat.",
+        "category": "event",
+        "is_featured": False,
+    },
     # Patch Notes
     {
         "title": "April Patch Notes Released",
@@ -60,6 +76,14 @@ mock_news = [
         "slug": "skill-rebalance",
         "summary": "Adjusted ability cooldowns and damage coefficients for balance.",
         "content": "After reviewing player feedback and performance data, the following changes have been made: Meteor Strike cooldown reduced from 12s to 10s. Piercing Arrow damage increased by 15%. Fireball mana cost reduced by 20%.",
+        "category": "patch",
+        "is_featured": False,
+    },
+    {
+        "title": "Memory Optimization Update",
+        "slug": "memory-optimization",
+        "summary": "Server performance improvements for smoother gameplay.",
+        "content": "We've implemented new memory management systems that reduce server lag during peak hours. Average ping has been reduced by 30ms and instance stability has been significantly improved.",
         "category": "patch",
         "is_featured": False,
     },
@@ -93,6 +117,22 @@ mock_news = [
         "summary": "Double EXP for all players.",
         "content": "Full details about the Spring Festival event. Rewards, quests, and more.",
         "category": "event",
+    },
+    {
+        "title": "Item Mall Summer Sale",
+        "slug": "summer-sale",
+        "summary": "Up to 50% off on selected items in the Item Mall.",
+        "content": "The Item Mall is having a huge summer sale! Get premium costumes, pets, and consumables at discounted prices. Sale runs until the end of the month.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "New Player Welcome Bonus",
+        "slug": "welcome-bonus",
+        "summary": "New players receive a free starter pack on account creation.",
+        "content": "Welcome to Trickster Chronicles! All newly created accounts will receive a Welcome Pack containing: 7-day EXP boost, starter gear set, 1000 in-game currency, and an exclusive newcomer pet.",
+        "category": "notice",
+        "is_featured": False,
     },
 ]
 

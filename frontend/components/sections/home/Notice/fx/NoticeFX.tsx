@@ -1,6 +1,6 @@
 'use client'
 
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import styles from './NoticeFX.module.css'
 
 type Particle = {
@@ -24,6 +24,17 @@ const particles: Particle[] = [
 ]
 
 function NoticeFX(){
+  const particleStyles = useMemo(() => particles.map(p => ({
+    left: p.left,
+    top: p.top,
+    width: p.size * 2,
+    height: p.size * 2,
+    background: `radial-gradient(circle, ${p.color} 0%, transparent 70%)`,
+    opacity: p.opacity,
+    animationDuration: `${p.duration}s`,
+    animationDelay: `${p.delay}s`
+  })), [])
+
   return (
     <div className={styles.fx}>
 
@@ -32,20 +43,11 @@ function NoticeFX(){
       <div className={styles.radial}></div>
 
       {/* PARTICLES */}
-      {particles.map((p, i) => (
+      {particleStyles.map((style, i) => (
         <div
           key={i}
           className={styles.bk}
-          style={{
-            left: p.left,
-            top: p.top,
-            width: p.size * 2,
-            height: p.size * 2,
-            background: `radial-gradient(circle, ${p.color} 0%, transparent 70%)`,
-            opacity: p.opacity,
-            animationDuration: `${p.duration}s`,
-            animationDelay: `${p.delay}s`
-          } as React.CSSProperties}
+          style={style}
         />
       ))}
 
