@@ -1,0 +1,46 @@
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Nunito:wght@400;600;800&display=swap');
+:root{
+  --bg:#0C1220;
+  --alt:#1A2840;
+  --navbar:#080E1A;
+
+  --accent:#00C8E8;
+  --mint:#00D4A8;
+  --green:#7EC832;
+  --gold:#F4A820;
+  --info: #4A90D9;
+  --txt:#E8F4FF;
+  --muted:#7AACCC;
+  --dim:#3E5870;
+
+  --c-cyan:      #00D4E8;
+  --c-cyan-dk:   #0099AA;
+  --c-cyan-glow: rgba(0,212,232,0.30);
+  --c-gold:      #FFD166;
+  --c-pink:      #FF6FA8;
+  --c-purple:    #9B6DFF;
+  --c-green:     #4ADE80;
+  --c-bg:        #07101F;
+  --c-panel:     rgba(5,12,26,0.92);
+  --c-border:    rgba(0,212,232,0.28);
+  --c-text:      #DFF0FF;
+  --c-muted:     #6A95B8;
+  --c-input-bg:  rgba(0,212,232,0.06);
+
+  --border:rgba(0,200,232,0.15);
+
+  --fd:'Cinzel', serif;
+  --fb:'Nunito', sans-serif;
+}
+
+body{
+  font-family:var(--fb);
+  background:var(--bg);
+  color:var(--txt);
+}
+body{
+  margin:0;
+  background:var(--bg);
+}

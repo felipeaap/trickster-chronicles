@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+  .blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.18;
+  z-index: -1;
+  pointer-events:none;
+}
+
+.blob1{ width:500px; height:500px; background:var(--c-cyan); top:50%; left:-200px; }
+.blob2{ width:400px; height:400px; background:var(--c-purple); top:160px; right:-100px; }
+.blob3{ width:320px; height:320px; background:var(--c-gold); bottom:-200px; right:40%; }
+  
+  /* ── Section Header ── */
+  .ranking {
+    margin: 20px 0;
+  }
+  
+  /* ── Update Note ── */
+  .updateNote {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--dim);
+  }

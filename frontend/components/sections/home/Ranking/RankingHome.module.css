@@ -1,0 +1,18 @@
+.section{
+    background:var(--alt);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    position:relative;
+  }
+
+  .inner{
+    max-width:900px;
+    margin:0 auto;
+    padding: 40px;
+  
+    grid-template-columns:1fr 340px;
+  }
+
+  .rank{
+    padding:14px 16px;
+  }

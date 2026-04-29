@@ -1,0 +1,457 @@
+.sceneRoot{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:var(--c-bg);
+  overflow:hidden;
+}
+
+.scene{
+  position:relative;
+  z-index:1;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.success {
+  color: #52c41a;
+  font-size: 13px;
+  margin-top: -4px;
+}
+/* =========================
+   BLOBS
+========================= */
+
+.blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.18;
+  pointer-events:none;
+}
+
+.blob1{ width:500px; height:500px; background:var(--c-cyan); top:-120px; left:-100px; }
+.blob2{ width:400px; height:400px; background:var(--c-purple); bottom:-80px; right:-60px; }
+.blob3{ width:320px; height:320px; background:var(--c-pink); top:40%; right:15%; }
+
+/* =========================
+   LAUNCHER
+========================= */
+
+.launcher{
+  position:relative;
+  display:flex;
+  width:900px;
+  max-width:96vw;
+  min-height:460px;
+
+  border-radius:18px;
+  overflow:hidden;
+
+  border:1px solid var(--c-border);
+
+  box-shadow:
+    0 0 0 1px rgba(0,212,232,0.08),
+    0 30px 80px rgba(0,0,0,0.7),
+    0 0 60px rgba(0,212,232,0.12);
+
+  animation:fadeUp .55s cubic-bezier(.22,.9,.35,1) both;
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(28px) scale(.97); }
+  to{ opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* CLOSE */
+
+.close{
+  position:absolute;
+  top:14px;
+  right:16px;
+  z-index:20;
+
+  width:28px;
+  height:28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.15);
+
+  background:rgba(0,0,0,0.4);
+
+  color:rgba(255,255,255,0.55);
+  font-size:14px;
+
+  cursor:pointer;
+  transition:.2s;
+}
+
+.close:hover{
+  background:rgba(220,50,50,0.5);
+  color:white;
+  transform:rotate(90deg) scale(1.1);
+}
+
+.close:active{
+  transform:scale(.9);
+}
+/* =========================
+   FORM PANEL
+========================= */
+
+.panelForm{
+  flex:0 0 340px;
+  background:var(--c-panel);
+  backdrop-filter:blur(24px);
+
+  padding:40px 36px 32px;
+
+  display:flex;
+  flex-direction:column;
+
+  border-right:1px solid var(--c-border);
+}
+
+/* SCAN TOP */
+
+.panelForm::after{
+  content:'';
+  position:absolute;
+  top:0; left:0; right:0;
+  height:2px;
+
+  background:linear-gradient(90deg,transparent,var(--c-cyan),transparent);
+  animation:scanH 3s ease-in-out infinite;
+}
+
+@keyframes scanH{
+  0%,100%{ opacity:.4; transform:scaleX(.3); }
+  50%{ opacity:1; transform:scaleX(1); }
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logoWrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.logoImg{
+  width:320px;
+  height: auto;
+  filter:
+    drop-shadow(0 0 14px rgba(0,212,232,.6))
+    drop-shadow(0 0 28px rgba(0,212,232,.3));
+
+  animation:floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+}
+
+.logoVer{
+  font-size:13px;
+  color:rgba(0,212,232,.5);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+/* FIELD */
+
+.field {
+  width: 100%;
+  margin-bottom: 14px;
+  animation: fadeUp .5s .18s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+.label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--c-muted);
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  background: var(--c-input-bg);
+  border: 1px solid rgba(0, 212, 232, .22);
+  border-radius: 9px;
+  margin-top: 5px;
+  color: var(--c-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.input::placeholder {
+  padding: 5px;
+  color: var(--c-muted); 
+  opacity: 0.5;
+}
+.input:focus{
+  outline:none;
+  border-color:var(--c-cyan);
+  box-shadow:0 0 0 3px rgba(0,212,232,.14);
+}
+
+/* =========================
+   REMEMBER
+========================= */
+
+.remember{
+  display:flex;
+  gap:7px;
+  margin-bottom:18px;
+  color:var(--c-muted);
+  animation: fadeUp .5s .18s both;
+}
+
+.remember input[type=checkbox] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--c-cyan);
+  background-color: var(--c-muted);
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+}
+/* =========================
+   BUTTON
+========================= */
+
+.loginBtn{
+  height:44px;
+
+  border:none;
+  border-radius:9px;
+
+  font-family:var(--font-head);
+  font-size:17px;
+  letter-spacing:4px;
+
+  background:linear-gradient(135deg,var(--c-cyan),var(--c-cyan-dk));
+  color:#04101E;
+
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:0 4px 22px rgba(0,212,232,.35);
+  animation: fadeUp .5s .28s both;
+}
+
+.loginBtn::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:55%;
+  height:100%;
+
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+
+  animation:scanBtn 2.8s infinite;
+}
+
+@keyframes scanBtn{
+  0%{ left:-100%; }
+  60%{ left:130%; }
+  100%{ left:130%; }
+}
+
+/* =========================
+   LINKS
+========================= */
+.info {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.links{
+  display:flex;
+  justify-content:space-between;
+  margin: 15px 0px;
+  animation: fadeUp .5s .38s both;
+}
+
+.links button{
+  font-size:15px;
+  color:var(--c-muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.links button:hover{
+  color:var(--c-cyan);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 232, .3), transparent);
+  margin-bottom: 14px;
+  animation: fadeUp .5s .48s both;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status{
+  display:flex;
+  gap:7px;
+  align-items:center;
+  animation: fadeUp .5s .58s both;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--c-green);
+  box-shadow:0 0 8px rgba(74,222,128,.7);
+}
+
+.text {
+  font-size: 11.5px;
+  color: var(--c-muted);
+}
+
+.text strong {
+  color: var(--c-green);
+}
+/* =========================
+   RIGHT PANEL
+========================= */
+
+.panelArt{
+  position:relative;
+  flex:1;
+  overflow:hidden;
+  background:var(--c-bg);
+}
+
+.panelArt::before{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background-image:
+    linear-gradient(rgba(0,212,232,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,232,.045) 1px, transparent 1px);
+
+  background-size:48px 48px;
+}
+
+.panelArt::after{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background:radial-gradient(
+    ellipse at 80% 50%,
+    transparent 35%,
+    rgba(7,16,31,.55) 100%
+  );
+}
+
+/* =========================
+   CHARACTER
+========================= */
+
+.char{
+  object-fit:contain;
+  transform: scale(1.15);
+}
+
+@keyframes floatIdle{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-10px); }
+  100%{ transform:translateY(0); }
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+  position:absolute;
+  bottom:80px;
+  left:50%;
+
+  transform:translateX(-50%) translateY(20px);
+
+  background:rgba(220,40,40,.85);
+  border:1px solid rgba(255,100,100,.4);
+
+  border-radius:8px;
+  padding:8px 16px;
+
+  font-size:12.5px;
+  color:#FFD6D6;
+
+  opacity:0;
+  transition:.3s;
+}
+
+.toastShow{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+/* estado de saída */
+.closing{
+  animation: modalOut .3s ease forwards;
+}
+
+/* animação */
+@keyframes modalOut{
+  to{
+    opacity:0;
+    transform:translateY(20px) scale(.92);
+  }
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: -4px;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}

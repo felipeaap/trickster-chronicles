@@ -1,0 +1,256 @@
+.fx{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+.card{
+  position:relative;
+  margin-bottom:22px;
+  border-radius:14px;
+  overflow:hidden;
+
+  border:1px solid rgba(255,215,0,.25);
+}
+
+/* =========================
+   BACKGROUND FX
+========================= */
+.bgGlow{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 110% 50%, rgba(255,215,0,.25), transparent 60%),
+    radial-gradient(circle at 60% 50%, rgba(0,200,232,.18), transparent 60%);
+  pointer-events:none;
+}
+
+/* =========================
+   CHARACTER (BLEED)
+========================= */
+.characterWrap{
+  position:absolute;
+  right:0px;
+  bottom:0px;
+  height:100%;
+  pointer-events:none;
+  z-index:1;
+}
+
+.character{
+  height:100%;
+  width:auto;
+
+  object-fit:contain;
+  object-position:bottom right;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatIdle{
+  0%{ transform:translateY(0px); }
+  50%{ transform:translateY(-10px); }
+  100%{ transform:translateY(0px); }
+}
+
+/* =========================
+   INNER
+========================= */
+.inner{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:22px 26px;
+}
+
+/* =========================
+   LEFT
+========================= */
+.left{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+/* TOP ROW */
+.topRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* LABEL */
+.label{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.1em;
+  color:#FFD700;
+  text-transform:uppercase;
+}
+
+/* SEASON BADGE */
+.seasonBadge{
+  font-size:12px;
+  font-weight:800;
+
+  padding:3px 8px;
+  border-radius:6px;
+
+  background:linear-gradient(180deg,#FFD700,#C89B00);
+  color:#3A2500;
+
+  box-shadow:
+    0 0 10px rgba(255,215,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+/* NAME */
+.name{
+  font-size:24px;
+  font-weight:900;
+  font-family:var(--fd);
+
+  color:white;
+}
+
+/* META */
+.meta{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* GUILD */
+.guild{
+  font-size:13px;
+  color:#7AACCC;
+  font-weight:700;
+}
+
+/* EXP */
+.exp{
+  margin-top:4px;
+
+  font-size:14px;
+  font-weight:800;
+
+  color:#00C8E8;
+}
+
+/* =========================
+   RIGHT (AVATAR)
+========================= */
+.right{
+  position:relative;
+  z-index:2;
+}
+
+
+.avatar{
+  border-radius:10px;
+  display:block;
+  transition:.2s;
+}
+.nameRow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.shimmer{
+  position:absolute;
+  top:0;
+  left:-120%;
+
+  width:60%;
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.15),
+    rgba(255,215,0,.25),
+    rgba(255,255,255,.1),
+    transparent
+  );
+
+  transform:skewX(-20deg);
+
+  animation:shimmerMove 2s;
+}
+
+@keyframes shimmerMove{
+  0%{ left:-120%; }
+  100%{ left:140%; }
+}
+
+.flare{
+  position:absolute;
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:radial-gradient(circle,
+    rgba(255,230,120,1) 0%,
+    rgba(255,200,50,.6) 40%,
+    transparent 70%
+  );
+
+  filter:blur(1px);
+  opacity:.7;
+
+  animation:flarePulse 3s infinite ease-in-out;
+}
+
+/* posições */
+.f1{ top:15%; left:20%; animation-delay:0s; }
+.f2{ top:60%; left:70%; animation-delay:1.2s; }
+.f3{ top:35%; left:50%; animation-delay:2s; }
+
+@keyframes flarePulse{
+  0%{ transform:scale(.8); opacity:.4; }
+  50%{ transform:scale(1.4); opacity:1; }
+  100%{ transform:scale(.8); opacity:.4; }
+}
+
+.name{
+  position:relative;
+
+  text-shadow:
+    0 0 6px rgba(255,215,0,.3),
+    0 0 18px rgba(255,215,0,.6),
+    0 0 30px rgba(255,200,50,.3),
+    0 2px 20px rgba(0,0,0,.6);
+}
+
+.seasonBadge{
+  position:relative;
+  overflow:hidden;
+}
+
+.seasonBadge::after{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:60%;
+  height:100%;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
+
+  animation:badgeShine 3s;
+}
+
+@keyframes badgeShine{
+  0%{ left:-100%; }
+  100%{ left:140%; }
+}

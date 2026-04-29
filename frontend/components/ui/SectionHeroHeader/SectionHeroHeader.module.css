@@ -1,0 +1,210 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* =========================
+   🎯 COLOR SYSTEM
+========================= */
+
+.blue {
+  --accent: #00eaff;
+  --accent-soft: rgba(0, 234, 255, 0.8);
+}
+
+.gold {
+  --accent: #facc15;
+  --accent-soft: rgba(250, 204, 21, 0.8);
+}
+
+.red {
+  --accent: #ff6060;
+  --accent-soft: rgba(255, 49, 59, 0.8);
+}
+
+.purple {
+  --accent: #b330ff;
+  --accent-soft: rgba(206, 83, 255, 0.8);
+}
+
+/* =========================
+   📏 VARIANTS
+========================= */
+/* =========================
+   🌌 ACCENT BLOB (DEFAULT ONLY)
+========================= */
+
+.default {
+  position: relative;
+  overflow: visible;
+}
+
+.default::before {
+  content: "";
+  position: absolute;
+
+  /* posição ajustada pra “abraçar” o título */
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 320px;
+  height: 160px;
+
+  background: radial-gradient(
+    ellipse at center,
+    var(--accent),
+    transparent 70%
+  );
+
+  filter: blur(60px);
+  opacity: 0.18;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blue.default::before {
+  opacity: 0.18;
+}
+
+.gold.default::before {
+  opacity: 0.22;
+}
+
+.red.default::before {
+  opacity: 0.16;
+}
+
+.purple.default::before {
+  opacity: 0.2;
+}
+
+.default .title {
+  font-size: 42px;
+  letter-spacing: 3px;
+}
+
+.card .title {
+  font-size: 20px;
+  letter-spacing: 1.5px;
+}
+
+.card .lineLeft,
+.card .lineRight {
+  width: 60px;
+}
+
+.card .diamond {
+  width: 7px;
+  height: 7px;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent) 5%, transparent),
+    0 0 20px color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.card {
+  gap: 10px;
+}
+
+.card .subtitle {
+  font-size: 12px;
+}
+
+/* =========================
+   🔷 DECOR
+========================= */
+
+.decor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* LINHAS */
+.lineRight,
+.lineLeft {
+  height: 1px;
+  width: 140px;
+  position: relative;
+}
+
+.lineRight {
+  background: linear-gradient(
+    to right,
+    var(--accent-soft),
+    transparent
+  );
+}
+
+.lineLeft {
+  background: linear-gradient(
+    to left,
+    var(--accent-soft),
+    transparent
+  );
+}
+
+/* glow */
+.lineRight::after,
+.lineLeft::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+/* DIAMOND */
+.diamond {
+  width: 11px;
+  height: 11px;
+  transform: rotate(45deg);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 2px solid var(--accent);
+
+  box-shadow:
+    0 0 6px var(--accent),
+    0 0 12px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 0 20px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* =========================
+   🧠 TITLE
+========================= */
+
+.title {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    80deg,
+    color-mix(in srgb, var(--accent) 80%, white),
+    var(--accent),
+    color-mix(in srgb, var(--accent) 60%, black)
+  );
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 4px color-mix(in srgb, var(--accent) 40%, transparent),
+    0 0 12px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.65;
+  text-align: center;
+  max-width: 520px;
+}

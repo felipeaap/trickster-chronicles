@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+.blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.18;
+  z-index: -1;
+  pointer-events:none;
+}
+
+.blob1{ width:500px; height:500px; background:var(--c-cyan); top:10%; left:-100px; }
+.blob2{ width:400px; height:400px; background:var(--c-purple); bottom:-80px; right:-150px; }
+.blob3{ width:320px; height:320px; background:var(--c-gold); bottom:-200px; right:40%; }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .header h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .header p {
+    opacity: 0.6;
+  }
+  
+  /* GRID RESPONSIVO */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }

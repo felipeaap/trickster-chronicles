@@ -1,0 +1,27 @@
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.title{
+  font-family:var(--fd);
+  font-weight:900;
+  font-size:24px;
+}
+
+.bar{
+  flex:1;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+
+.more{
+  font-size:14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color:var(--accent);
+  cursor:pointer;
+}

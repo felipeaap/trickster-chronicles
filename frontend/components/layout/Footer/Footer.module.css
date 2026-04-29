@@ -1,0 +1,93 @@
+.footer {
+    background: var(--navbar);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 36px 24px 24px;
+  }
+  
+  .footerInner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .footerTop {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  
+  .footerBrand {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .footerLogo {
+    font-family: var(--fd);
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--txt);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  
+  .footerTagline {
+    font-size: 12px;
+    color: var(--dim);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  
+  .footerCol {
+    min-width: 110px;
+  }
+  
+  .footerColTitle {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 10px;
+  }
+  
+  .footerLink {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 6px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .footerBottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .footerCopy {
+    font-size: 11px;
+    color: var(--dim);
+  }
+  
+  .footerDiscordBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(88, 101, 242, 0.15);
+    border: 1px solid rgba(88, 101, 242, 0.3);
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #8890f0;
+    cursor: pointer;
+    font-family: var(--fb);
+    text-decoration: none;
+  }

@@ -1,0 +1,112 @@
+.wrap {
+  background: var(--alt);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 12px;
+}
+
+.table td {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background: rgba(0,200,232,.04);
+}
+
+.home tr{
+  border-bottom:1px solid rgba(255,255,255,.03);
+}
+
+.home tr:hover{
+  background:rgba(0,200,232,.06);
+}
+
+/* TOP 1 destaque */
+.home tr:nth-child(1){
+  background:linear-gradient(
+    90deg,
+    rgba(255,215,0,.08),
+    transparent
+  );
+}
+
+/* EXP mais chamativa */
+.home td:last-child{
+  font-weight:800;
+  color:#00C8E8;
+}
+
+/* nome mais forte */
+.home .name{
+  font-size:14px;
+}
+
+.home .row:hover{
+  background:rgba(0,200,232,.06);
+}
+
+.topRank{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* TOP COLORS */
+.top1{
+  color:#FFD700;
+  text-shadow:0 0 10px rgba(255,215,0,.6);
+}
+
+.top2{
+  color:#C8D8E8;
+  text-shadow:0 0 8px rgba(192,210,230,.4);
+}
+
+.top3{
+  color:#D4844A;
+  text-shadow:0 0 8px rgba(212,132,74,.35);
+}
+
+.normalRank{
+  color:#3E5870;
+}
+/* EXP destaque */
+.exp{
+  text-align:right;
+  font-weight:800;
+  color:#00C8E8;
+}
+
+.home img{
+  border-radius:3px;
+  display:block;
+}
+
+.top1{
+  animation:goldPulse 2s infinite alternate;
+}
+
+@keyframes goldPulse{
+  from{ text-shadow:0 0 6px rgba(255,215,0,.5); }
+  to{ text-shadow:0 0 16px rgba(255,215,0,1); }
+}
+.topRank svg{
+  transition:.2s;
+}
+
+.home tr:hover .topRank svg{
+  transform:scale(1.15);
+}

@@ -1,0 +1,91 @@
+.hero{
+    position:relative;
+    height:800px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+  }
+  
+  /* BG */
+  .bg{
+    object-fit:cover;
+    z-index:0;
+    filter:saturate(1.1);
+  }
+  
+  .overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      to bottom,
+      rgba(8,14,26,.35),
+      rgba(8,14,26,.55)
+    );
+    z-index:1;
+  }
+  
+  /* CONTENT */
+  .content{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+  }
+  
+  /* LOGO */
+  .logo{
+    width: 320px;
+    height: auto;
+    filter:
+      drop-shadow(0 0 30px rgba(255,242,122,.9));
+  }
+  
+  /* SMALL TEXT */
+  .topText{
+    font-size:12px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:#ffffff;
+    margin-bottom:14px;
+  }
+  
+  /* SERVER TITLE */
+  .serverTitle{
+    font-size:12px;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:#ffffff;
+    margin-bottom:10px;
+  }
+  
+  /* SUBTITLE */
+  .subtitle{
+    font-size:14px;
+    color:#d6ecff;
+    line-height:1.6;
+    margin-bottom:22px;
+  }
+  
+  /* BUTTONS */
+  .actions{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  
+  /* STATUS ROW */
+  .statusRow{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  
+  /* BADGE OVERRIDE (visual mais próximo) */
+  .statusRow span{
+    background:rgba(10,20,40,.8);
+    border:1px solid rgba(0,200,232,.2);
+    backdrop-filter:blur(6px);
+  }

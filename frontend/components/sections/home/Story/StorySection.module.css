@@ -1,0 +1,158 @@
+.section{
+    position:relative;
+    padding:80px 24px;
+    text-align:center;
+  
+    overflow:hidden;
+    border-top:1px solid rgba(0,200,232,.1);
+  }
+  
+  /* BACKGROUND IMAGE */
+  .bg{
+    object-fit:cover;
+    z-index:0;
+  }
+  
+  /* OVERLAY (exatamente como seu CSS original) */
+  .overlay{
+    position:absolute;
+    inset:0;
+  
+    background:
+      linear-gradient(to bottom,rgba(8,14,26,.55) 0%,rgba(8,14,26,.25) 30%,rgba(8,14,26,.55) 100%),
+      linear-gradient(to right,rgba(8,14,26,.15) 0%,transparent 25%,rgba(8,14,26,.15) 100%);
+  
+    z-index:1;
+  }
+  
+  /* CONTENT */
+  .content{
+    position:relative;
+    z-index:2;
+  }
+  
+  /* LABEL */
+  .label{
+    font-size:16px;
+    font-weight:600;
+    color:rgba(255,255,255,1);
+  
+    margin-bottom:6px;
+  
+    text-shadow:0 1px 8px rgba(0,0,0,.8);
+  }
+  
+  /* TITLE */
+  .title{
+    font-family:var(--fd);
+    font-size:32px;
+    font-weight:900;
+  
+    color:#fff;
+    letter-spacing:.06em;
+  
+    margin-bottom:28px;
+  
+    text-shadow:0 2px 20px rgba(0,0,0,.9);
+  }
+  
+  .title span{
+    color:var(--accent);
+  }
+  
+  /* VIDEO FRAME */
+  .videoFrame{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  
+    cursor:pointer;
+  }
+
+  /* THUMB WRAPPER */
+.thumbWrapper{
+  margin-top:28px;
+
+  width:100%;
+  max-width:620px;
+
+  margin-left:auto;
+  margin-right:auto;
+
+  position:relative;
+  cursor:pointer;
+
+  border-radius:10px;
+  overflow:hidden;
+
+  transition:.3s;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.3),
+  0 0 20px rgba(0,200,232,.15);
+}
+
+/* IMAGE */
+.thumb{
+  width:100%;
+  height:auto;
+  display:block;
+
+  filter:brightness(.85);
+  transition:.3s;
+}
+
+/* OVERLAY */
+.thumbOverlay{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.05em;
+
+  color:white;
+
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(2px);
+
+  opacity:0;
+  transition:.3s;
+}
+
+/* HOVER */
+.thumbWrapper:hover{
+  transform:translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.6),
+    0 0 20px rgba(0,200,232,.25);
+}
+
+.thumbWrapper:hover .thumb{
+  filter:brightness(1);
+}
+
+.thumbWrapper:hover .thumbOverlay{
+  opacity:1;
+}
+
+.thumbWrapper::after{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+  );
+
+  transform:translateX(-100%);
+  animation:shimmer 3s infinite;
+}

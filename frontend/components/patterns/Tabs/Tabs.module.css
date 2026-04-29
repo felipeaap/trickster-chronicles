@@ -1,0 +1,11 @@
+.tabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .icon{
+    display:flex;
+    align-items:center;
+    margin-right:4px;
+  }

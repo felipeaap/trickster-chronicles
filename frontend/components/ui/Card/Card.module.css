@@ -1,0 +1,83 @@
+.card {
+  background: var(--alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* =========================
+   🎯 COLOR SYSTEM
+========================= */
+
+.blue {
+  --accent: #00eaff;
+}
+
+.purple {
+  --accent: #a855f7;
+}
+
+.gold {
+  --accent: #facc15;
+}
+
+.red {
+  --accent: #ef4444;
+}
+
+/* =========================
+   📦 VARIANTS
+========================= */
+
+/* DEFAULT (leve highlight no hover) */
+.default:hover {
+  border-color: var(--accent);
+}
+
+/* NEON (principal visual cyberpunk) */
+.neon {
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--accent) 30%, transparent),
+    inset 0 0 20px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.neon:hover {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 20px var(--accent),
+    0 0 40px color-mix(in srgb, var(--accent) 40%, transparent),
+    inset 0 0 30px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+/* OUTLINE */
+.outline {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.outline:hover {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+/* =========================
+   ✨ OPTIONAL GLOW PROP
+========================= */
+
+.glow {
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--accent) 30%, transparent);
+}

@@ -1,0 +1,67 @@
+.section{
+    padding:36px 24px;
+    background:var(--bg);
+  
+    border-top:1px solid rgba(0,200,232,.08);
+  }
+  
+  .inner{
+    max-width:900px;
+    margin:0 auto;
+  }
+  
+  /* TABLE */
+  .table{
+    width:100%;
+    border-collapse:collapse;
+  }
+  
+  /* HEADER */
+  .table th{
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  
+    color:var(--dim);
+  
+    padding:0 8px 10px 0;
+    text-align:left;
+  }
+  
+  .exp{
+    text-align:right;
+  }
+  
+  /* ROW */
+  .row{
+    border-bottom:1px solid rgba(255,255,255,.04);
+    transition:.15s;
+  }
+  
+  .row:hover{
+    background:rgba(0,200,232,.04);
+  }
+  
+  /* CELLS */
+  .row td{
+    padding:10px 8px 10px 0;
+    font-size:13px;
+    font-weight:600;
+  }
+  
+  /* NAME */
+  .name{
+    font-weight:700;
+  }
+  
+  /* GUILD */
+  .guild{
+    color:#7AACCC;
+  }
+  
+  /* RANK */
+  .rank{
+    width:50px;
+    font-family:var(--fd);
+  }

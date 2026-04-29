@@ -1,0 +1,57 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* VARIANTS (expansão controlada de cores) */
+  .wrapper[data-variant="primary"] {
+    --accent: #00eaff;
+  }
+  
+  .wrapper[data-variant="secondary"] {
+    --accent: #ff00c8;
+  }
+  
+  .wrapper[data-variant="accent"] {
+    --accent: #7c3aed;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .size {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  
+  .description {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+  
+  /* Glow interno cyberpunk */
+  .wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top,
+      var(--accent),
+      transparent 70%
+    );
+    opacity: 0.08;
+    pointer-events: none;
+  }

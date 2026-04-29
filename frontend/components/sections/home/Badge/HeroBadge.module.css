@@ -1,0 +1,63 @@
+.badge{
+    display:flex;
+    align-items:center;
+    gap:6px;
+  
+    padding:6px 12px;
+    border-radius:20px;
+  
+    font-size:11px;
+    font-weight:600;
+  
+    background:rgba(10,20,40,.6);
+    border:1px solid rgba(0,200,232,.2);
+  
+    backdrop-filter:blur(8px);
+  
+    transition:.2s;
+  }
+  
+  /* DOT */
+  .dot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+  }
+  
+  /* TEXT */
+  .label{
+    color:var(--muted);
+  }
+  
+  .value{
+    font-weight:800;
+    color:var(--txt);
+  }
+  
+  /* VARIANTS */
+  
+  /* ONLINE */
+  .green .dot{
+    background:var(--green);
+    box-shadow:0 0 6px var(--green);
+  }
+
+  .default .dot{
+    background:var(--accent);
+    box-shadow:0 0 6px var(--accent);
+  }
+
+  /* GOLD (rates) */
+  .gold .dot{
+    background:var(--gold);
+    box-shadow:0 0 6px var(--gold);
+  }
+  /* HOVER */
+  .badge:hover{
+    transform:translateY(-1px);
+    border-color:rgba(0,200,232,.4);
+  }
+  .badge:hover .dot{
+    box-shadow:0 0 10px currentColor;
+  }
+  
