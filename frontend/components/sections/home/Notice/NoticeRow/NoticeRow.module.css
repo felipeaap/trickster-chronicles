@@ -22,7 +22,9 @@
   font-family: var(--fb);
   flex:1;
   font-size:16px;
-  color: var(--dim);
+  font-weight:600;
+  text-decoration:none;
+  color:inherit;
 }
 
 .date{
