@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { AuthProvider } from '@/context/AuthContext'
-import { User } from '@/lib/auth/types'
+import { User } from '@/features/auth/types'
 
 import Navbar from '@/components/layout/Navbar/Navbar'
 import LoginScene from '@/components/layout/Auth/LoginScene'
