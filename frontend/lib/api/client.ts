@@ -4,25 +4,32 @@ export async function apiFetch(
   path: string,
   options: RequestInit = {}
 ) {
-  const res = await fetch(`${API_URL}${path}`, {
-    ...options,
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(options.headers || {}),
-    },
-  })
+  try {
+    const res = await fetch(`${API_URL}${path}`, {
+      ...options,
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(options.headers || {}),
+      },
+    })
 
-  if (!res.ok) {
-    let message = 'Request failed'
+    if (!res.ok) {
+      let message = 'Request failed'
 
-    try {
-      const data = await res.json()
-      message = data?.message || data?.detail || message
-    } catch {}
+      try {
+        const data = await res.json()
+        message = data?.message || data?.detail || message
+      } catch {}
 
-    throw new Error(message)
+      throw new Error(message)
+    }
+
+    return res.json()
+  } catch (error) {
+    if (error instanceof TypeError && error.message.includes('fetch')) {
+      throw new Error('Network error: Unable to connect to the server')
+    }
+    throw error
   }
-
-  return res.json()
 }
