@@ -39,8 +39,5 @@ body{
   font-family:var(--fb);
   background:var(--bg);
   color:var(--txt);
-}
-body{
   margin:0;
-  background:var(--bg);
 }
