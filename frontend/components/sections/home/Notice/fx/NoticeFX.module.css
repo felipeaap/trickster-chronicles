@@ -4,6 +4,8 @@
     pointer-events:none;
     z-index:1;
     overflow:hidden;
+    /* Hardware acceleration */
+    transform: translateZ(0);
   }
   
   /* CONIC LIGHT */
@@ -23,7 +25,8 @@
       transparent
     );
   
-    animation:rotateLight 12s linear infinite;
+    /* Optimized rotation */
+    animation:rotateLight 20s linear infinite;
     will-change:transform;
   }
   
@@ -58,7 +61,7 @@
   
   @keyframes float{
     0%,100%{ transform:translate3d(-50%,-50%,0) scale(1); }
-    50%{ transform:translate3d(-50%,-60%,0) scale(1.2); }
+    50%{ transform:translate3d(-50%,-55%,0) scale(1.1); }
   }
   
   /* FLARE */
@@ -74,16 +77,16 @@
     opacity:.8;
     will-change:transform,opacity;
   
-    animation:pulse 3s ease-in-out infinite;
+    animation:pulse 4s ease-in-out infinite;
   }
   
   @keyframes pulse{
     0%,100%{ opacity:.4; transform:translate3d(-50%,-50%,0) scale(.9); }
-    50%{ opacity:1; transform:translate3d(-50%,-50%,0) scale(1.2); }
+    50%{ opacity:.8; transform:translate3d(-50%,-50%,0) scale(1.1); }
   }
   
   /* LIGHT ROTATION */
   @keyframes rotateLight{
-    from{ transform:rotate3d(0,0,1,0deg); }
-    to{ transform:rotate3d(0,0,1,360deg); }
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
   }

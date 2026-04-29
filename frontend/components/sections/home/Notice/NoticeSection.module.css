@@ -3,7 +3,8 @@
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
   position:relative;
-  overflow:hidden;
+  /* Reverted character containment - allowing overflow for the bleed effect */
+  overflow: visible;
 }
 
 .inner{
@@ -20,7 +21,8 @@
 /* LEFT */
 .left{
   padding:48px 0;
-  min-height: 400px;
+  /* Reverted min-height to auto */
+  min-height: auto;
   z-index:3;
 }
 
@@ -31,7 +33,8 @@
 /* RIGHT SIDE */
 .right{
   position:relative;
-  min-height:380px;
+  /* Reverted min-height to auto */
+  min-height: auto;
   overflow:visible;
   display:flex;
   align-items:center;

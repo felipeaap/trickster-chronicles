@@ -70,6 +70,7 @@ mock_news = [
         "summary": "Explore the new endgame dungeon.",
         "content": "Full details about the Spring Festival event. Rewards, quests, and more.",
         "category": "patch",
+        "published": True,
     },
     {
         "title": "Skill Rebalance - Mage & Archer Classes",
@@ -94,6 +95,7 @@ mock_news = [
         "summary": "Scheduled downtime announcement.",
         "content": "Full details about the Spring Festival event. Rewards, quests, and more.",
         "category": "notice",
+        "published": True,
     },
     {
         "title": "Account Security Reminder",
@@ -117,6 +119,7 @@ mock_news = [
         "summary": "Double EXP for all players.",
         "content": "Full details about the Spring Festival event. Rewards, quests, and more.",
         "category": "event",
+        "published": True,
     },
     {
         "title": "Item Mall Summer Sale",
@@ -134,10 +137,95 @@ mock_news = [
         "category": "notice",
         "is_featured": False,
     },
+    # 🆕 NEWLY ADDED FOR SEEDING 🆕
+    {
+        "title": "Winter Wonderland Update",
+        "slug": "winter-wonderland-update",
+        "summary": "Snow has fallen in the Central Square! Discover new winter quests and items.",
+        "content": "Experience the magic of winter in Trickster Chronicles! The entire Central Square has been transformed into a winter wonderland. Catch snowflakes to trade for limited-edition costumes and furniture.",
+        "category": "event",
+        "is_featured": False,
+    },
+    {
+        "title": "Server Expansion: New Channel Added",
+        "slug": "server-expansion",
+        "summary": "To accommodate our growing community, we've added a new server channel.",
+        "content": "Due to the recent influx of new players, we've added Channel 5 to help reduce lag and provide more farming spots for everyone. Thank you for your continued support!",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Class Spotlight: The Master Alchemist",
+        "slug": "class-spotlight-alchemist",
+        "summary": "Learn about the unique playstyle and abilities of the Alchemist class.",
+        "content": "The Alchemist is a versatile support class that uses potions and transmutations to buff allies and debuff enemies. In this spotlight, we cover the best builds for solo leveling and group raids.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Community Fan Art Contest",
+        "slug": "fan-art-contest",
+        "summary": "Show off your artistic skills and win premium in-game currency!",
+        "content": "Submit your Trickster-themed artwork on our Discord for a chance to win 5000 Item Mall points and have your art featured on our loading screens!",
+        "category": "event",
+        "is_featured": False,
+    },
+    {
+        "title": "Developer Blog: The Future of Trickster Chronicles",
+        "slug": "dev-blog-future",
+        "summary": "Our lead developer shares the roadmap for the next six months.",
+        "content": "We have big plans for the future! In this blog post, we discuss upcoming features like the Guild Territory Wars, the Awakening System, and our first major story expansion.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Emergency Reboot - May 5",
+        "slug": "emergency-reboot-may-5",
+        "summary": "Short downtime to address a critical bug in the trade system.",
+        "content": "We will be performing an emergency server reboot at 14:00 server time to fix an issue where trades would occasionally fail to complete. Estimated downtime: 15 minutes.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Pet Breeding Guide for Beginners",
+        "slug": "pet-breeding-guide",
+        "summary": "Master the art of pet breeding with our comprehensive guide.",
+        "content": "Breeding pets can be complex, but rewarding! This guide covers everything from compatibility to inheritance of special traits. Learn how to breed the ultimate companion.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Rare Drop Rate Boost: Shadowcrypt",
+        "slug": "drop-rate-boost-shadowcrypt",
+        "summary": "Increased drop rates for legendary items in the Shadowcrypt dungeon.",
+        "content": "For this week only, the drop rates for legendary weapons and armor in the Shadowcrypt dungeon have been increased by 20%. Form your party and start hunting!",
+        "category": "event",
+        "is_featured": False,
+    },
+    {
+        "title": "New Mount: Royal Griffon",
+        "slug": "new-mount-griffon",
+        "summary": "Soar through the skies on the majestic Royal Griffon mount.",
+        "content": "The Royal Griffon has arrived! This majestic flying mount is now available in the Item Mall. It offers a 50% movement speed bonus and unique aerial animations.",
+        "category": "notice",
+        "is_featured": False,
+    },
+    {
+        "title": "Balance Update - Paladin Shield Block",
+        "slug": "balance-update-paladin",
+        "summary": "Adjustments to the Paladin's shield block mechanics for better PVP balance.",
+        "content": "We've adjusted the Paladin's shield block chance to be more consistent in PVP scenarios. The base block rate has been slightly reduced, but the bonus from dexterity has been increased.",
+        "category": "patch",
+        "is_featured": False,
+    },
 ]
+
+# Clean existing news if any (optional, but good for fresh seed)
+db.query(News).delete()
 
 for item in mock_news:
     db.add(News(**item))
 
 db.commit()
 db.close()
+print(f"Seeded {len(mock_news)} news items.")
