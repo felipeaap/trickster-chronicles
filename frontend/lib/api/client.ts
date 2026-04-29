@@ -25,9 +25,9 @@ export async function apiFetch(
       throw new Error(message)
     }
 
-    return res.json()
+    return await res.json()
   } catch (error) {
-    if (error instanceof TypeError && error.message.includes('fetch')) {
+    if (error instanceof TypeError) {
       throw new Error('Network error: Unable to connect to the server')
     }
     throw error
