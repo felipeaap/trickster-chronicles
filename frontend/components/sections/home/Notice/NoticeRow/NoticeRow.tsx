@@ -24,7 +24,7 @@ export default function NoticeRow({ item }: Props){
   return (
     <div className={styles.row}>
 
-      <Badge variant={item.category as any}>
+      <Badge variant={item.category as 'notice' | 'patch' | 'event'}>
         {label}
       </Badge>
 
