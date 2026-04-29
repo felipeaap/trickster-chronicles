@@ -3,17 +3,22 @@ import { cookiesToHeader } from '../utils/cookies'
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export async function getServerUser() {
-  const cookieStore = await cookies()
-  const cookieHeader = cookiesToHeader(cookieStore)
+  try {
+    const cookieStore = await cookies()
+    const cookieHeader = cookiesToHeader(cookieStore)
 
-  const res = await fetch(`${API_URL}/auth/me`, {
-    headers: {
-      cookie: cookieHeader,
-    },
-    cache: 'no-store',
-  })
+    const res = await fetch(`${API_URL}/auth/me`, {
+      headers: {
+        cookie: cookieHeader,
+      },
+      cache: 'no-store',
+    })
 
-  if (!res.ok) return null
+    if (!res.ok) return null
 
-  return res.json()
+    return res.json()
+  } catch (error) {
+    console.error('Failed to get server user:', error)
+    return null
+  }
 }

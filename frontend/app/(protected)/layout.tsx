@@ -1,4 +1,4 @@
-import { getServerUser } from '@/lib/auth/server'
+import { getServerUser } from '@/lib/auth/getServerUser'
 import { redirect } from 'next/navigation'
 
 export default async function ProtectedLayout({
