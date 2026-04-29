@@ -16,7 +16,7 @@ export async function getServerUser() {
 
     if (!res.ok) return null
 
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.error('Failed to get server user:', error)
     return null
