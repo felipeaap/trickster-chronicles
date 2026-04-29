@@ -1,13 +1,14 @@
 .row{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:16px;
 
-  padding:13px 0; /* ↑ mais espaçamento */
+  padding:16px 12px;
   border-bottom:1px solid rgba(255,255,255,.05);
+  border-radius: 8px;
 
   cursor:pointer;
-  transition:.2s;
+  transition: all .2s ease;
 }
 
 .row:last-child{
@@ -16,8 +17,10 @@
 
 .row:hover{
   color:var(--accent);
-  background:rgba(255,255,255,.02);
+  background:rgba(255,255,255,.04);
+  transform: translateX(4px);
 }
+
 .text{
   font-family: var(--fb);
   flex:1;

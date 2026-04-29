@@ -1,3 +1,6 @@
+'use client'
+
+import { memo } from 'react'
 import styles from './NoticeFX.module.css'
 
 type Particle = {
@@ -20,7 +23,7 @@ const particles: Particle[] = [
   { left:'65%', top:'68%', size:18, color:'#FFC840', opacity:.38, duration:3.3, delay:1.1 },
 ]
 
-export default function NoticeFX(){
+function NoticeFX(){
   return (
     <div className={styles.fx}>
 
@@ -42,7 +45,7 @@ export default function NoticeFX(){
             opacity: p.opacity,
             animationDuration: `${p.duration}s`,
             animationDelay: `${p.delay}s`
-          }}
+          } as React.CSSProperties}
         />
       ))}
 
@@ -55,3 +58,5 @@ export default function NoticeFX(){
     </div>
   )
 }
+
+export default memo(NoticeFX)

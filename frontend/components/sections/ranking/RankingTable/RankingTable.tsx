@@ -38,7 +38,6 @@ export default function RankingTable({ players, limit, variant = 'default'}: Pro
         <tbody>
           {data.map((p, i) => {
             const rank = i + 1
-            const isTop3 = rank <= 3
 
             return (
               <tr key={p.name} className={styles.row}>
