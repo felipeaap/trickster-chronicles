@@ -10,7 +10,7 @@ export default function RankingPodium({ top3 }: Props) {
   return (
     <div className={styles.podium}>
       {top3.map((player, index) => (
-        <PodiumCard key={player.name} player={player} rank={index + 1} />
+        <PodiumCard key={player.name} player={player} rank={(index + 1) as 1 | 2 | 3} />
       ))}
     </div>
   );
